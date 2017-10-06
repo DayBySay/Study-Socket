@@ -7,23 +7,36 @@
 //
 
 #import "ViewController.h"
+#import <GCDAsyncSocket.h>
 
-@interface ViewController ()
-
+@interface ViewController () <GCDAsyncSocketDelegate>
+@property (nonatomic) GCDAsyncSocket *asyncSocket;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    dispatch_queue_t main = dispatch_get_main_queue();
+    self.asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:main];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)didTouchUpConnectButton:(id)sender {
+    NSError *error = nil;
+    BOOL connected = [self.asyncSocket connectToHost:@"www.paypal.com" onPort:443 error:&error];
+    if (!connected) {
+        NSLog(@"%@", error);
+    }
 }
 
+- (void)socket:(GCDAsyncSocket *)sock didConnectToUrl:(NSURL *)url {
+    
+}
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+    
+}
 
 @end
