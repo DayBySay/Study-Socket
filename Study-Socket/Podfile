@@ -1,0 +1,5 @@
+target 'Study-Socket' do
+  # use_frameworks!
+
+  pod 'CocoaAsyncSocket'  
+end
