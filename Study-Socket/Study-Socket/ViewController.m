@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import <GCDAsyncSocket.h>
 
+#define HOST @"www.google.com"
+#define PORT 80
+
 @interface ViewController () <GCDAsyncSocketDelegate>
 @property (nonatomic) GCDAsyncSocket *asyncSocket;
 @end
@@ -25,7 +28,7 @@
 
 - (IBAction)didTouchUpConnectButton:(id)sender {
     NSError *error = nil;
-    BOOL connected = [self.asyncSocket connectToHost:@"www.paypal.com" onPort:443 error:&error];
+    BOOL connected = [self.asyncSocket connectToHost:HOST onPort:PORT error:&error];
     if (!connected) {
         NSLog(@"%@", error);
     }
@@ -38,5 +41,29 @@
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     
 }
+
+
+- (void)socketDidSecure:(GCDAsyncSocket *)sock
+{
+    NSString *requestStr = [NSString stringWithFormat:@"GET / HTTP/1.1\r\nHost: %@\r\n\r\n", HOST];
+    NSData *requestData = [requestStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [sock writeData:requestData withTimeout:-1 tag:0];
+    [sock readDataToData:[GCDAsyncSocket CRLFData] withTimeout:-1 tag:0];
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
+
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+    
+    NSString *httpResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    
+}
+
 
 @end
