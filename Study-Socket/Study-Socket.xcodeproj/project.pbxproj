@@ -13,6 +13,7 @@
 		3A19F39A1F8762F900414C9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A19F3991F8762F900414C9D /* Assets.xcassets */; };
 		3A19F39D1F8762F900414C9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A19F39B1F8762F900414C9D /* LaunchScreen.storyboard */; };
 		3A19F3A01F8762F900414C9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F39F1F8762F900414C9D /* main.m */; };
+		3A19F3A81F889D0400414C9D /* LIstenSocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F3A71F889D0400414C9D /* LIstenSocketViewController.m */; };
 		8D09B3DC12B91102B33BE5CC /* libPods-Study-Socket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45539F9030C9C7CD7182521C /* libPods-Study-Socket.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		3A19F39C1F8762F900414C9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A19F39E1F8762F900414C9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A19F39F1F8762F900414C9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A19F3A61F889D0400414C9D /* LIstenSocketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LIstenSocketViewController.h; sourceTree = "<group>"; };
+		3A19F3A71F889D0400414C9D /* LIstenSocketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LIstenSocketViewController.m; sourceTree = "<group>"; };
 		45539F9030C9C7CD7182521C /* libPods-Study-Socket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Study-Socket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDF71FECD89B126202ECCD6 /* Pods-Study-Socket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Socket.release.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Socket/Pods-Study-Socket.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +89,8 @@
 				3A19F3911F8762F900414C9D /* AppDelegate.m */,
 				3A19F3931F8762F900414C9D /* ViewController.h */,
 				3A19F3941F8762F900414C9D /* ViewController.m */,
+				3A19F3A61F889D0400414C9D /* LIstenSocketViewController.h */,
+				3A19F3A71F889D0400414C9D /* LIstenSocketViewController.m */,
 				3A19F3961F8762F900414C9D /* Main.storyboard */,
 				3A19F3991F8762F900414C9D /* Assets.xcassets */,
 				3A19F39B1F8762F900414C9D /* LaunchScreen.storyboard */,
@@ -222,6 +227,7 @@
 			files = (
 				3A19F3951F8762F900414C9D /* ViewController.m in Sources */,
 				3A19F3A01F8762F900414C9D /* main.m in Sources */,
+				3A19F3A81F889D0400414C9D /* LIstenSocketViewController.m in Sources */,
 				3A19F3921F8762F900414C9D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
