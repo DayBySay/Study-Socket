@@ -7,31 +7,24 @@
 //
 
 #import "LIstenSocketViewController.h"
+#import <GCDAsyncSocket.h>
 
-@interface LIstenSocketViewController ()
-
+@interface LIstenSocketViewController () <GCDAsyncSocketDelegate>
+@property (nonatomic) GCDAsyncSocket *listenSocket;
 @end
 
 @implementation LIstenSocketViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSError *error = nil;
+    self.listenSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    [self.listenSocket acceptOnPort:10080 error:&error];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
+    NSLog(@"Accept:%p",sock);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
