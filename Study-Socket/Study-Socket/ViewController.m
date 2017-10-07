@@ -34,7 +34,7 @@
     }
 }
 
-- (void)socket:(GCDAsyncSocket *)sock didConnectToUrl:(NSURL *)url {
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
     
 }
 
