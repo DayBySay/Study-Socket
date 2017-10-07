@@ -48,6 +48,8 @@
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     [self appendLog:NSStringFromSelector(_cmd)];
+    self.fromSocket = nil;
+    self.toSocket = nil;
 }
 
 - (void)appendLog:(NSString *)log {
