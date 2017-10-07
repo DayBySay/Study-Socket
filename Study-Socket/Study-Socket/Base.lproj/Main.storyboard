@@ -121,13 +121,43 @@
                     <view key="view" contentMode="scaleToFill" id="OFR-IB-E0w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-oN-HVB">
+                                <rect key="frame" x="167" y="81" width="41" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PRP-Ph-q61"/>
+                                    <constraint firstAttribute="width" constant="41" id="Rqv-4S-WhD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2KR-7x-dhN">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ohb-oN-HVB" firstAttribute="centerX" secondItem="OFR-IB-E0w" secondAttribute="centerX" id="CLP-ny-XtL"/>
+                            <constraint firstItem="Ohb-oN-HVB" firstAttribute="top" secondItem="hYZ-XM-euF" secondAttribute="top" constant="17" id="MIw-bl-9SL"/>
+                            <constraint firstItem="hYZ-XM-euF" firstAttribute="trailing" secondItem="2KR-7x-dhN" secondAttribute="trailing" id="NcL-jh-4vG"/>
+                            <constraint firstItem="hYZ-XM-euF" firstAttribute="bottom" secondItem="2KR-7x-dhN" secondAttribute="bottom" id="S5n-tx-uWP"/>
+                            <constraint firstItem="2KR-7x-dhN" firstAttribute="leading" secondItem="hYZ-XM-euF" secondAttribute="leading" id="SUM-2c-8XK"/>
+                            <constraint firstItem="2KR-7x-dhN" firstAttribute="top" secondItem="Ohb-oN-HVB" secondAttribute="bottom" constant="8" id="aoM-8M-NFy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hYZ-XM-euF"/>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="Ohb-oN-HVB" id="7FD-9y-TCM"/>
+                        <outlet property="textView" destination="2KR-7x-dhN" id="G1W-du-9Jk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv9-DY-bab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="847"/>
+            <point key="canvasLocation" x="136.80000000000001" y="846.9265367316342"/>
         </scene>
     </scenes>
 </document>
